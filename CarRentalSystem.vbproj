@@ -37,6 +37,7 @@
 
   <ItemGroup>
     <Folder Include="InterfacesLayer\" />
+    <Folder Include="Images\" />
     <Folder Include="SharedModels\" />
   </ItemGroup>
 
