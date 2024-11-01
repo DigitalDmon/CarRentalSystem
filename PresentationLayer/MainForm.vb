@@ -1,15 +1,17 @@
 ﻿Public Class MainForm
+
+
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ' Instanciar la clase de conexión
-        Dim dbConnection As New DatabaseConnection()
+    End Sub
 
-        ' Llamar al método ObtenerDatos con una consulta SQL
-        Dim query As String = "SELECT * FROM customers"
-        Dim dataTable As DataTable = dbConnection.ObtenerDatos(query)
+    ' Botón para mostrar el formulario de registro de un nuevo cliente
+    Private Sub BtnRegClient_Click(sender As Object, e As EventArgs) Handles BtnRegClient.Click
 
-        ' Mostrar los datos en un DataGridView (por ejemplo)
-        DataGridView1.DataSource = dataTable
+        ' Crear una nueva instancia de ClientForm
+        Dim clientForm As New ClientForm()
+        ' Mostrar el formulario de registro de un nuevo cliente
+        clientForm.ShowDialog()
 
     End Sub
 End Class

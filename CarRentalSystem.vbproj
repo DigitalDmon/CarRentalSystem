@@ -37,7 +37,6 @@
 
   <ItemGroup>
     <Folder Include="InterfacesLayer\" />
-    <Folder Include="BusinessLogicLayer\" />
     <Folder Include="SharedModels\" />
   </ItemGroup>
 
