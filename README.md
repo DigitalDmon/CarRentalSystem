@@ -1,3 +1,3 @@
 # CarRentalSystem
 
-[![The system diagram](Images\SystemDiagram.png)]
+[![The system diagram](Images/SystemDiagram.png)]
