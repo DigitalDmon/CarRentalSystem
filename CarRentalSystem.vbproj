@@ -3,10 +3,16 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <StartupObject>Sub Main</StartupObject>
+    <StartupObject>CarRentalSystem.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="D\**" />
+    <EmbeddedResource Remove="D\**" />
+    <None Remove="D\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Import Include="System.Data" />
@@ -27,6 +33,16 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="InterfacesLayer\" />
+    <Folder Include="BusinessLogicLayer\" />
+    <Folder Include="SharedModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 
 </Project>
