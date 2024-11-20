@@ -5,7 +5,9 @@ Public Class ClientForm
     Private clientManager As New ClientManager()
 
     Private Sub ClientForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         LoadClientData()
+
     End Sub
 
     ' Botón para registrar un nuevo cliente
@@ -53,6 +55,18 @@ Public Class ClientForm
     End Sub
 
     Private Sub BtnUpdList_Click(sender As Object, e As EventArgs) Handles BtnUpdList.Click
+
         LoadClientData()
+
+    End Sub
+
+    Private Sub BtnToMainMenu_Click(sender As Object, e As EventArgs) Handles BtnToMainMenu.Click
+
+        ' Mostrar el formulario principal que ya está oculto
+        MainForm.Show()
+
+        ' Cerrar el formulario actual
+        Me.Close()
+
     End Sub
 End Class

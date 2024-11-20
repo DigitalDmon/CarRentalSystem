@@ -30,63 +30,76 @@ Partial Class ClientForm
         TxtEmail = New TextBox()
         BtnRegClient = New Button()
         BtnUpdList = New Button()
+        BtnToMainMenu = New Button()
         CType(DgvInfClients, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' DgvInfClients
         ' 
+        DgvInfClients.AllowUserToAddRows = False
+        DgvInfClients.AllowUserToDeleteRows = False
+        DgvInfClients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        DgvInfClients.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedHeaders
         DgvInfClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvInfClients.Location = New Point(143, 43)
+        DgvInfClients.Location = New Point(178, 12)
         DgvInfClients.Name = "DgvInfClients"
-        DgvInfClients.Size = New Size(729, 150)
+        DgvInfClients.ReadOnly = True
+        DgvInfClients.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+        DgvInfClients.Size = New Size(594, 437)
         DgvInfClients.TabIndex = 0
         ' 
         ' TxtName
         ' 
+        TxtName.Font = New Font("Segoe UI", 12F)
         TxtName.Location = New Point(12, 12)
         TxtName.Name = "TxtName"
         TxtName.PlaceholderText = "Nombre"
-        TxtName.Size = New Size(125, 23)
+        TxtName.Size = New Size(160, 29)
         TxtName.TabIndex = 1
         ' 
         ' TxtLastName
         ' 
-        TxtLastName.Location = New Point(12, 41)
+        TxtLastName.Font = New Font("Segoe UI", 12F)
+        TxtLastName.Location = New Point(12, 47)
         TxtLastName.Name = "TxtLastName"
         TxtLastName.PlaceholderText = "Apellido"
-        TxtLastName.Size = New Size(125, 23)
+        TxtLastName.Size = New Size(160, 29)
         TxtLastName.TabIndex = 2
         ' 
         ' TxtIdeNumber
         ' 
-        TxtIdeNumber.Location = New Point(12, 70)
+        TxtIdeNumber.Font = New Font("Segoe UI", 12F)
+        TxtIdeNumber.Location = New Point(12, 82)
         TxtIdeNumber.Name = "TxtIdeNumber"
         TxtIdeNumber.PlaceholderText = "Número de identidad"
-        TxtIdeNumber.Size = New Size(125, 23)
+        TxtIdeNumber.Size = New Size(160, 29)
         TxtIdeNumber.TabIndex = 3
         ' 
         ' TxtPhoNumber
         ' 
-        TxtPhoNumber.Location = New Point(12, 99)
+        TxtPhoNumber.Font = New Font("Segoe UI", 12F)
+        TxtPhoNumber.Location = New Point(12, 117)
         TxtPhoNumber.Name = "TxtPhoNumber"
         TxtPhoNumber.PlaceholderText = "Número de teléfono"
-        TxtPhoNumber.Size = New Size(125, 23)
+        TxtPhoNumber.Size = New Size(160, 29)
         TxtPhoNumber.TabIndex = 4
         ' 
         ' TxtEmail
         ' 
-        TxtEmail.Location = New Point(12, 128)
+        TxtEmail.Font = New Font("Segoe UI", 12F)
+        TxtEmail.Location = New Point(12, 152)
         TxtEmail.Name = "TxtEmail"
         TxtEmail.PlaceholderText = "Email"
-        TxtEmail.Size = New Size(125, 23)
+        TxtEmail.Size = New Size(160, 29)
         TxtEmail.TabIndex = 5
         ' 
         ' BtnRegClient
         ' 
         BtnRegClient.AutoSize = True
-        BtnRegClient.Location = New Point(12, 157)
+        BtnRegClient.Font = New Font("Segoe UI", 12F)
+        BtnRegClient.Location = New Point(12, 187)
         BtnRegClient.Name = "BtnRegClient"
-        BtnRegClient.Size = New Size(101, 25)
+        BtnRegClient.Size = New Size(160, 31)
         BtnRegClient.TabIndex = 6
         BtnRegClient.Text = "Registrar cliente"
         BtnRegClient.UseVisualStyleBackColor = True
@@ -94,18 +107,31 @@ Partial Class ClientForm
         ' BtnUpdList
         ' 
         BtnUpdList.AutoSize = True
-        BtnUpdList.Location = New Point(143, 12)
+        BtnUpdList.Font = New Font("Segoe UI", 12F)
+        BtnUpdList.Location = New Point(12, 224)
         BtnUpdList.Name = "BtnUpdList"
-        BtnUpdList.Size = New Size(101, 25)
+        BtnUpdList.Size = New Size(160, 31)
         BtnUpdList.TabIndex = 7
         BtnUpdList.Text = "Actualizar lista"
         BtnUpdList.UseVisualStyleBackColor = True
+        ' 
+        ' BtnToMainMenu
+        ' 
+        BtnToMainMenu.AutoSize = True
+        BtnToMainMenu.Font = New Font("Segoe UI", 12F)
+        BtnToMainMenu.Location = New Point(12, 418)
+        BtnToMainMenu.Name = "BtnToMainMenu"
+        BtnToMainMenu.Size = New Size(160, 31)
+        BtnToMainMenu.TabIndex = 8
+        BtnToMainMenu.Text = "Volver al menú"
+        BtnToMainMenu.UseVisualStyleBackColor = True
         ' 
         ' ClientForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(884, 561)
+        ClientSize = New Size(784, 461)
+        Controls.Add(BtnToMainMenu)
         Controls.Add(BtnUpdList)
         Controls.Add(BtnRegClient)
         Controls.Add(TxtEmail)
@@ -115,6 +141,7 @@ Partial Class ClientForm
         Controls.Add(TxtName)
         Controls.Add(DgvInfClients)
         Name = "ClientForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "ClientForm"
         CType(DgvInfClients, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
@@ -129,4 +156,5 @@ Partial Class ClientForm
     Friend WithEvents TxtEmail As TextBox
     Friend WithEvents BtnRegClient As Button
     Friend WithEvents BtnUpdList As Button
+    Friend WithEvents BtnToMainMenu As Button
 End Class
