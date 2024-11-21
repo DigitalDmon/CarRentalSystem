@@ -49,4 +49,23 @@ Public Class ClientManager
 
     End Function
 
+    Public Function DeleteClient(clientId As Integer) As Boolean
+        Try
+            clientRepository.DeleteClient(clientId)
+            Return True
+        Catch ex As Exception
+            Throw New ApplicationException("Error while deleting the client.", ex)
+        End Try
+    End Function
+
+    Public Function UpdateClient(clientId As Integer, name As String, lastname As String, identity_number As String, phone_number As String, email As String) As Boolean
+        Try
+            clientRepository.UpdateClient(clientId, name, lastname, identity_number, phone_number, email)
+            Return True
+        Catch ex As Exception
+            Throw New ApplicationException("Error while updating the client.", ex)
+        End Try
+    End Function
+
+
 End Class

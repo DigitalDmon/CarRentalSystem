@@ -29,8 +29,10 @@ Partial Class ClientForm
         TxtPhoNumber = New TextBox()
         TxtEmail = New TextBox()
         BtnRegClient = New Button()
-        BtnUpdList = New Button()
+        BtnCleanInputs = New Button()
         BtnToMainMenu = New Button()
+        BtnDeleteClient = New Button()
+        BtnUpdateClient = New Button()
         CType(DgvInfClients, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -104,16 +106,16 @@ Partial Class ClientForm
         BtnRegClient.Text = "Registrar cliente"
         BtnRegClient.UseVisualStyleBackColor = True
         ' 
-        ' BtnUpdList
+        ' BtnCleanInputs
         ' 
-        BtnUpdList.AutoSize = True
-        BtnUpdList.Font = New Font("Segoe UI", 12F)
-        BtnUpdList.Location = New Point(12, 224)
-        BtnUpdList.Name = "BtnUpdList"
-        BtnUpdList.Size = New Size(160, 31)
-        BtnUpdList.TabIndex = 7
-        BtnUpdList.Text = "Actualizar lista"
-        BtnUpdList.UseVisualStyleBackColor = True
+        BtnCleanInputs.AutoSize = True
+        BtnCleanInputs.Font = New Font("Segoe UI", 12F)
+        BtnCleanInputs.Location = New Point(12, 298)
+        BtnCleanInputs.Name = "BtnCleanInputs"
+        BtnCleanInputs.Size = New Size(160, 31)
+        BtnCleanInputs.TabIndex = 7
+        BtnCleanInputs.Text = "Limpiar campos"
+        BtnCleanInputs.UseVisualStyleBackColor = True
         ' 
         ' BtnToMainMenu
         ' 
@@ -126,13 +128,35 @@ Partial Class ClientForm
         BtnToMainMenu.Text = "Volver al menú"
         BtnToMainMenu.UseVisualStyleBackColor = True
         ' 
+        ' BtnDeleteClient
+        ' 
+        BtnDeleteClient.Font = New Font("Segoe UI", 12F)
+        BtnDeleteClient.Location = New Point(12, 224)
+        BtnDeleteClient.Name = "BtnDeleteClient"
+        BtnDeleteClient.Size = New Size(160, 31)
+        BtnDeleteClient.TabIndex = 9
+        BtnDeleteClient.Text = "Eliminar cliente"
+        BtnDeleteClient.UseVisualStyleBackColor = True
+        ' 
+        ' BtnUpdateClient
+        ' 
+        BtnUpdateClient.Font = New Font("Segoe UI", 12F)
+        BtnUpdateClient.Location = New Point(12, 261)
+        BtnUpdateClient.Name = "BtnUpdateClient"
+        BtnUpdateClient.Size = New Size(160, 31)
+        BtnUpdateClient.TabIndex = 10
+        BtnUpdateClient.Text = "Actualizar cliente"
+        BtnUpdateClient.UseVisualStyleBackColor = True
+        ' 
         ' ClientForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(784, 461)
+        Controls.Add(BtnUpdateClient)
+        Controls.Add(BtnDeleteClient)
         Controls.Add(BtnToMainMenu)
-        Controls.Add(BtnUpdList)
+        Controls.Add(BtnCleanInputs)
         Controls.Add(BtnRegClient)
         Controls.Add(TxtEmail)
         Controls.Add(TxtPhoNumber)
@@ -155,6 +179,8 @@ Partial Class ClientForm
     Friend WithEvents TxtPhoNumber As TextBox
     Friend WithEvents TxtEmail As TextBox
     Friend WithEvents BtnRegClient As Button
-    Friend WithEvents BtnUpdList As Button
+    Friend WithEvents BtnCleanInputs As Button
     Friend WithEvents BtnToMainMenu As Button
+    Friend WithEvents BtnDeleteClient As Button
+    Friend WithEvents BtnUpdateClient As Button
 End Class

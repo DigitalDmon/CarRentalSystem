@@ -36,7 +36,7 @@ Partial Class MainForm
         BtnRegClient.Anchor = AnchorStyles.Top
         BtnRegClient.AutoSize = True
         BtnRegClient.Font = New Font("Segoe UI", 12F)
-        BtnRegClient.Location = New Point(296, 86)
+        BtnRegClient.Location = New Point(296, 125)
         BtnRegClient.Name = "BtnRegClient"
         BtnRegClient.Size = New Size(193, 31)
         BtnRegClient.TabIndex = 0
@@ -48,7 +48,7 @@ Partial Class MainForm
         BtnRegVechicle.Anchor = AnchorStyles.Top
         BtnRegVechicle.AutoSize = True
         BtnRegVechicle.Font = New Font("Segoe UI", 12F)
-        BtnRegVechicle.Location = New Point(296, 129)
+        BtnRegVechicle.Location = New Point(296, 305)
         BtnRegVechicle.Name = "BtnRegVechicle"
         BtnRegVechicle.Size = New Size(193, 31)
         BtnRegVechicle.TabIndex = 1
@@ -60,7 +60,7 @@ Partial Class MainForm
         BtnRegPayment.Anchor = AnchorStyles.Top
         BtnRegPayment.AutoSize = True
         BtnRegPayment.Font = New Font("Segoe UI", 12F)
-        BtnRegPayment.Location = New Point(296, 172)
+        BtnRegPayment.Location = New Point(296, 260)
         BtnRegPayment.Name = "BtnRegPayment"
         BtnRegPayment.Size = New Size(193, 31)
         BtnRegPayment.TabIndex = 2
@@ -72,7 +72,7 @@ Partial Class MainForm
         BtnRegReservation.Anchor = AnchorStyles.Top
         BtnRegReservation.AutoSize = True
         BtnRegReservation.Font = New Font("Segoe UI", 12F)
-        BtnRegReservation.Location = New Point(296, 215)
+        BtnRegReservation.Location = New Point(296, 80)
         BtnRegReservation.Name = "BtnRegReservation"
         BtnRegReservation.Size = New Size(193, 31)
         BtnRegReservation.TabIndex = 3
@@ -84,7 +84,7 @@ Partial Class MainForm
         BtnRegMaintenance.Anchor = AnchorStyles.Top
         BtnRegMaintenance.AutoSize = True
         BtnRegMaintenance.Font = New Font("Segoe UI", 12F)
-        BtnRegMaintenance.Location = New Point(296, 258)
+        BtnRegMaintenance.Location = New Point(296, 170)
         BtnRegMaintenance.Name = "BtnRegMaintenance"
         BtnRegMaintenance.Size = New Size(193, 31)
         BtnRegMaintenance.TabIndex = 4
@@ -96,7 +96,7 @@ Partial Class MainForm
         BtnRegMechanic.Anchor = AnchorStyles.Top
         BtnRegMechanic.AutoSize = True
         BtnRegMechanic.Font = New Font("Segoe UI", 12F)
-        BtnRegMechanic.Location = New Point(296, 301)
+        BtnRegMechanic.Location = New Point(296, 215)
         BtnRegMechanic.Name = "BtnRegMechanic"
         BtnRegMechanic.Size = New Size(193, 31)
         BtnRegMechanic.TabIndex = 5
@@ -107,7 +107,7 @@ Partial Class MainForm
         ' 
         BtnFinish.AutoSize = True
         BtnFinish.Font = New Font("Segoe UI", 12F)
-        BtnFinish.Location = New Point(296, 344)
+        BtnFinish.Location = New Point(296, 350)
         BtnFinish.Name = "BtnFinish"
         BtnFinish.Size = New Size(193, 31)
         BtnFinish.TabIndex = 9
