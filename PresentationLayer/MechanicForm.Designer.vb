@@ -22,39 +22,28 @@ Partial Class MechanicForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        BtnUpdateVehicle = New Button()
-        BtnDeleteVehicle = New Button()
+        BtnUpdateMechanic = New Button()
         BtnToMainMenu = New Button()
         BtnCleanInputs = New Button()
-        BtnRegVehicle = New Button()
-        TxtFuel = New TextBox()
-        TxtPlate = New TextBox()
-        TxtYear = New TextBox()
-        TxtModel = New TextBox()
-        TxtBrand = New TextBox()
-        DgvInfVehicles = New DataGridView()
-        CType(DgvInfVehicles, ComponentModel.ISupportInitialize).BeginInit()
+        BtnRegMechanic = New Button()
+        TxtSpecialityMechanic = New TextBox()
+        TxtPhoneMechanic = New TextBox()
+        TxtIdentityMechanic = New TextBox()
+        Me.TxtLastnameMechanic = New TextBox()
+        TxtNameMechanic = New TextBox()
+        DgvInfMechanic = New DataGridView()
+        CType(DgvInfMechanic, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' BtnUpdateVehicle
+        ' BtnUpdateMechanic
         ' 
-        BtnUpdateVehicle.Font = New Font("Segoe UI", 12F)
-        BtnUpdateVehicle.Location = New Point(8, 261)
-        BtnUpdateVehicle.Name = "BtnUpdateVehicle"
-        BtnUpdateVehicle.Size = New Size(160, 31)
-        BtnUpdateVehicle.TabIndex = 32
-        BtnUpdateVehicle.Text = "Actualizar vehículo"
-        BtnUpdateVehicle.UseVisualStyleBackColor = True
-        ' 
-        ' BtnDeleteVehicle
-        ' 
-        BtnDeleteVehicle.Font = New Font("Segoe UI", 12F)
-        BtnDeleteVehicle.Location = New Point(8, 224)
-        BtnDeleteVehicle.Name = "BtnDeleteVehicle"
-        BtnDeleteVehicle.Size = New Size(160, 31)
-        BtnDeleteVehicle.TabIndex = 31
-        BtnDeleteVehicle.Text = "Eliminar vehículo"
-        BtnDeleteVehicle.UseVisualStyleBackColor = True
+        BtnUpdateMechanic.Font = New Font("Segoe UI", 12F)
+        BtnUpdateMechanic.Location = New Point(8, 224)
+        BtnUpdateMechanic.Name = "BtnUpdateMechanic"
+        BtnUpdateMechanic.Size = New Size(160, 31)
+        BtnUpdateMechanic.TabIndex = 32
+        BtnUpdateMechanic.Text = "Actualizar vehículo"
+        BtnUpdateMechanic.UseVisualStyleBackColor = True
         ' 
         ' BtnToMainMenu
         ' 
@@ -71,115 +60,115 @@ Partial Class MechanicForm
         ' 
         BtnCleanInputs.AutoSize = True
         BtnCleanInputs.Font = New Font("Segoe UI", 12F)
-        BtnCleanInputs.Location = New Point(8, 298)
+        BtnCleanInputs.Location = New Point(8, 261)
         BtnCleanInputs.Name = "BtnCleanInputs"
         BtnCleanInputs.Size = New Size(160, 31)
         BtnCleanInputs.TabIndex = 29
         BtnCleanInputs.Text = "Limpiar campos"
         BtnCleanInputs.UseVisualStyleBackColor = True
         ' 
-        ' BtnRegVehicle
+        ' BtnRegMechanic
         ' 
-        BtnRegVehicle.AutoSize = True
-        BtnRegVehicle.Font = New Font("Segoe UI", 12F)
-        BtnRegVehicle.Location = New Point(8, 187)
-        BtnRegVehicle.Name = "BtnRegVehicle"
-        BtnRegVehicle.Size = New Size(160, 31)
-        BtnRegVehicle.TabIndex = 28
-        BtnRegVehicle.Text = "Registrar vehículo"
-        BtnRegVehicle.UseVisualStyleBackColor = True
+        BtnRegMechanic.AutoSize = True
+        BtnRegMechanic.Font = New Font("Segoe UI", 12F)
+        BtnRegMechanic.Location = New Point(8, 187)
+        BtnRegMechanic.Name = "BtnRegMechanic"
+        BtnRegMechanic.Size = New Size(160, 31)
+        BtnRegMechanic.TabIndex = 28
+        BtnRegMechanic.Text = "Registrar vehículo"
+        BtnRegMechanic.UseVisualStyleBackColor = True
         ' 
-        ' TxtFuel
+        ' TxtSpecialityMechanic
         ' 
-        TxtFuel.Font = New Font("Segoe UI", 12F)
-        TxtFuel.Location = New Point(8, 152)
-        TxtFuel.Name = "TxtFuel"
-        TxtFuel.PlaceholderText = "Combustible"
-        TxtFuel.Size = New Size(160, 29)
-        TxtFuel.TabIndex = 27
+        TxtSpecialityMechanic.Font = New Font("Segoe UI", 12F)
+        TxtSpecialityMechanic.Location = New Point(8, 152)
+        TxtSpecialityMechanic.Name = "TxtSpecialityMechanic"
+        TxtSpecialityMechanic.PlaceholderText = "Especialidad"
+        TxtSpecialityMechanic.Size = New Size(160, 29)
+        TxtSpecialityMechanic.TabIndex = 27
         ' 
-        ' TxtPlate
+        ' TxtPhoneMechanic
         ' 
-        TxtPlate.Font = New Font("Segoe UI", 12F)
-        TxtPlate.Location = New Point(8, 117)
-        TxtPlate.Name = "TxtPlate"
-        TxtPlate.PlaceholderText = "Placa"
-        TxtPlate.Size = New Size(160, 29)
-        TxtPlate.TabIndex = 26
+        TxtPhoneMechanic.Font = New Font("Segoe UI", 12F)
+        TxtPhoneMechanic.Location = New Point(8, 117)
+        TxtPhoneMechanic.Name = "TxtPhoneMechanic"
+        TxtPhoneMechanic.PlaceholderText = "Teléfono"
+        TxtPhoneMechanic.Size = New Size(160, 29)
+        TxtPhoneMechanic.TabIndex = 26
         ' 
-        ' TxtYear
+        ' TxtIdentityMechanic
         ' 
-        TxtYear.Font = New Font("Segoe UI", 12F)
-        TxtYear.Location = New Point(8, 82)
-        TxtYear.Name = "TxtYear"
-        TxtYear.PlaceholderText = "Año"
-        TxtYear.Size = New Size(160, 29)
-        TxtYear.TabIndex = 25
+        TxtIdentityMechanic.Font = New Font("Segoe UI", 12F)
+        TxtIdentityMechanic.Location = New Point(8, 82)
+        TxtIdentityMechanic.Name = "TxtIdentityMechanic"
+        TxtIdentityMechanic.PlaceholderText = "Cédula"
+        TxtIdentityMechanic.Size = New Size(160, 29)
+        TxtIdentityMechanic.TabIndex = 25
         ' 
-        ' TxtModel
+        ' TxtLastnameMechanic
         ' 
-        TxtModel.Font = New Font("Segoe UI", 12F)
-        TxtModel.Location = New Point(8, 47)
-        TxtModel.Name = "TxtModel"
-        TxtModel.PlaceholderText = "Modelo"
-        TxtModel.Size = New Size(160, 29)
-        TxtModel.TabIndex = 24
+        Me.TxtLastnameMechanic.Font = New Font("Segoe UI", 12F)
+        Me.TxtLastnameMechanic.Location = New Point(8, 47)
+        Me.TxtLastnameMechanic.Name = "TxtLastnameMechanic"
+        Me.TxtLastnameMechanic.PlaceholderText = "Apellido"
+        Me.TxtLastnameMechanic.Size = New Size(160, 29)
+        Me.TxtLastnameMechanic.TabIndex = 24
         ' 
-        ' TxtBrand
+        ' TxtNameMechanic
         ' 
-        TxtBrand.Font = New Font("Segoe UI", 12F)
-        TxtBrand.Location = New Point(8, 12)
-        TxtBrand.Name = "TxtBrand"
-        TxtBrand.PlaceholderText = "Marca"
-        TxtBrand.Size = New Size(160, 29)
-        TxtBrand.TabIndex = 23
+        TxtNameMechanic.Font = New Font("Segoe UI", 12F)
+        TxtNameMechanic.Location = New Point(8, 12)
+        TxtNameMechanic.Name = "TxtNameMechanic"
+        TxtNameMechanic.PlaceholderText = "Nombre"
+        TxtNameMechanic.Size = New Size(160, 29)
+        TxtNameMechanic.TabIndex = 23
         ' 
-        ' DgvInfVehicles
+        ' DgvInfMechanic
         ' 
-        DgvInfVehicles.AllowUserToAddRows = False
-        DgvInfVehicles.AllowUserToDeleteRows = False
-        DgvInfVehicles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-        DgvInfVehicles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedHeaders
-        DgvInfVehicles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvInfVehicles.Location = New Point(182, 12)
-        DgvInfVehicles.Name = "DgvInfVehicles"
-        DgvInfVehicles.ReadOnly = True
-        DgvInfVehicles.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DgvInfVehicles.Size = New Size(594, 437)
-        DgvInfVehicles.TabIndex = 22
+        DgvInfMechanic.AllowUserToAddRows = False
+        DgvInfMechanic.AllowUserToDeleteRows = False
+        DgvInfMechanic.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        DgvInfMechanic.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedHeaders
+        DgvInfMechanic.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DgvInfMechanic.Location = New Point(182, 12)
+        DgvInfMechanic.Name = "DgvInfMechanic"
+        DgvInfMechanic.ReadOnly = True
+        DgvInfMechanic.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+        DgvInfMechanic.Size = New Size(594, 437)
+        DgvInfMechanic.TabIndex = 22
         ' 
         ' MechanicForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(784, 461)
-        Controls.Add(BtnUpdateVehicle)
-        Controls.Add(BtnDeleteVehicle)
+        Controls.Add(BtnUpdateMechanic)
         Controls.Add(BtnToMainMenu)
         Controls.Add(BtnCleanInputs)
-        Controls.Add(BtnRegVehicle)
-        Controls.Add(TxtFuel)
-        Controls.Add(TxtPlate)
-        Controls.Add(TxtYear)
-        Controls.Add(TxtModel)
-        Controls.Add(TxtBrand)
-        Controls.Add(DgvInfVehicles)
+        Controls.Add(BtnRegMechanic)
+        Controls.Add(TxtSpecialityMechanic)
+        Controls.Add(TxtPhoneMechanic)
+        Controls.Add(TxtIdentityMechanic)
+        Controls.Add(Me.TxtLastnameMechanic)
+        Controls.Add(TxtNameMechanic)
+        Controls.Add(DgvInfMechanic)
         Name = "MechanicForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "MechanicForm"
-        CType(DgvInfVehicles, ComponentModel.ISupportInitialize).EndInit()
+        CType(DgvInfMechanic, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents BtnUpdateVehicle As Button
+    Friend WithEvents BtnUpdateMechanic As Button
     Friend WithEvents BtnDeleteVehicle As Button
     Friend WithEvents BtnToMainMenu As Button
     Friend WithEvents BtnCleanInputs As Button
-    Friend WithEvents BtnRegVehicle As Button
-    Friend WithEvents TxtFuel As TextBox
-    Friend WithEvents TxtPlate As TextBox
-    Friend WithEvents TxtYear As TextBox
+    Friend WithEvents BtnRegMechanic As Button
+    Friend WithEvents TxtSpecialityMechanic As TextBox
+    Friend WithEvents TxtPhoneMechanic As TextBox
+    Friend WithEvents TxtIdentityMechanic As TextBox
     Friend WithEvents TxtModel As TextBox
-    Friend WithEvents TxtBrand As TextBox
-    Friend WithEvents DgvInfVehicles As DataGridView
+    Friend WithEvents TxtNameMechanic As TextBox
+    Friend WithEvents DgvInfMechanic As DataGridView
 End Class

@@ -10,7 +10,6 @@ Public Class ClientForm
 
     End Sub
 
-    ' Botón para registrar un nuevo cliente
     Private Sub LoadClientData()
 
         ' Intentar obtener los clientes

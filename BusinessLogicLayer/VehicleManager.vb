@@ -69,4 +69,14 @@ Public Class VehicleManager
         End Try
     End Function
 
+    Public Function GetVehicleBrands() As DataTable
+        Return vehicleRepository.GetVehicleBrands()
+    End Function
+
+    Public Function GetModelsByBrand(brand As String) As DataTable
+        If String.IsNullOrWhiteSpace(brand) Then Throw New ArgumentException("Brand cannot be empty.")
+        Return vehicleRepository.GetModelsByBrand(brand)
+    End Function
+
+
 End Class

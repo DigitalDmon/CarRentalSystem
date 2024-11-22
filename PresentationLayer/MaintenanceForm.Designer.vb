@@ -22,47 +22,28 @@ Partial Class MaintenanceForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        BtnUpdateVehicle = New Button()
-        BtnDeleteVehicle = New Button()
         BtnToMainMenu = New Button()
         BtnCleanInputs = New Button()
-        BtnRegVehicle = New Button()
-        TxtFuel = New TextBox()
-        TxtPlate = New TextBox()
-        TxtYear = New TextBox()
-        TxtModel = New TextBox()
-        TxtBrand = New TextBox()
-        DgvInfVehicles = New DataGridView()
-        CType(DgvInfVehicles, ComponentModel.ISupportInitialize).BeginInit()
+        BtnRegMaintenance = New Button()
+        DgvInfMaintenance = New DataGridView()
+        CbVehPlateMaintenance = New ComboBox()
+        Label1 = New Label()
+        DtpMaintenance = New DateTimePicker()
+        Label2 = New Label()
+        TxtDescriptionMaintenance = New TextBox()
+        Label3 = New Label()
+        Label4 = New Label()
+        CbNameMechanic = New ComboBox()
+        CType(DgvInfMaintenance, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' BtnUpdateVehicle
-        ' 
-        BtnUpdateVehicle.Font = New Font("Segoe UI", 12F)
-        BtnUpdateVehicle.Location = New Point(8, 261)
-        BtnUpdateVehicle.Name = "BtnUpdateVehicle"
-        BtnUpdateVehicle.Size = New Size(160, 31)
-        BtnUpdateVehicle.TabIndex = 32
-        BtnUpdateVehicle.Text = "Actualizar vehículo"
-        BtnUpdateVehicle.UseVisualStyleBackColor = True
-        ' 
-        ' BtnDeleteVehicle
-        ' 
-        BtnDeleteVehicle.Font = New Font("Segoe UI", 12F)
-        BtnDeleteVehicle.Location = New Point(8, 224)
-        BtnDeleteVehicle.Name = "BtnDeleteVehicle"
-        BtnDeleteVehicle.Size = New Size(160, 31)
-        BtnDeleteVehicle.TabIndex = 31
-        BtnDeleteVehicle.Text = "Eliminar vehículo"
-        BtnDeleteVehicle.UseVisualStyleBackColor = True
         ' 
         ' BtnToMainMenu
         ' 
         BtnToMainMenu.AutoSize = True
         BtnToMainMenu.Font = New Font("Segoe UI", 12F)
-        BtnToMainMenu.Location = New Point(8, 418)
+        BtnToMainMenu.Location = New Point(12, 418)
         BtnToMainMenu.Name = "BtnToMainMenu"
-        BtnToMainMenu.Size = New Size(160, 31)
+        BtnToMainMenu.Size = New Size(200, 31)
         BtnToMainMenu.TabIndex = 30
         BtnToMainMenu.Text = "Volver al menú"
         BtnToMainMenu.UseVisualStyleBackColor = True
@@ -71,115 +52,147 @@ Partial Class MaintenanceForm
         ' 
         BtnCleanInputs.AutoSize = True
         BtnCleanInputs.Font = New Font("Segoe UI", 12F)
-        BtnCleanInputs.Location = New Point(8, 298)
+        BtnCleanInputs.Location = New Point(12, 319)
         BtnCleanInputs.Name = "BtnCleanInputs"
-        BtnCleanInputs.Size = New Size(160, 31)
+        BtnCleanInputs.Size = New Size(200, 31)
         BtnCleanInputs.TabIndex = 29
         BtnCleanInputs.Text = "Limpiar campos"
         BtnCleanInputs.UseVisualStyleBackColor = True
         ' 
-        ' BtnRegVehicle
+        ' BtnRegMaintenance
         ' 
-        BtnRegVehicle.AutoSize = True
-        BtnRegVehicle.Font = New Font("Segoe UI", 12F)
-        BtnRegVehicle.Location = New Point(8, 187)
-        BtnRegVehicle.Name = "BtnRegVehicle"
-        BtnRegVehicle.Size = New Size(160, 31)
-        BtnRegVehicle.TabIndex = 28
-        BtnRegVehicle.Text = "Registrar vehículo"
-        BtnRegVehicle.UseVisualStyleBackColor = True
+        BtnRegMaintenance.AutoSize = True
+        BtnRegMaintenance.Font = New Font("Segoe UI", 12F)
+        BtnRegMaintenance.Location = New Point(12, 282)
+        BtnRegMaintenance.Name = "BtnRegMaintenance"
+        BtnRegMaintenance.Size = New Size(200, 31)
+        BtnRegMaintenance.TabIndex = 28
+        BtnRegMaintenance.Text = "Registrar mantenimientos"
+        BtnRegMaintenance.UseVisualStyleBackColor = True
         ' 
-        ' TxtFuel
+        ' DgvInfMaintenance
         ' 
-        TxtFuel.Font = New Font("Segoe UI", 12F)
-        TxtFuel.Location = New Point(8, 152)
-        TxtFuel.Name = "TxtFuel"
-        TxtFuel.PlaceholderText = "Combustible"
-        TxtFuel.Size = New Size(160, 29)
-        TxtFuel.TabIndex = 27
+        DgvInfMaintenance.AllowUserToAddRows = False
+        DgvInfMaintenance.AllowUserToDeleteRows = False
+        DgvInfMaintenance.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        DgvInfMaintenance.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedHeaders
+        DgvInfMaintenance.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DgvInfMaintenance.Location = New Point(218, 12)
+        DgvInfMaintenance.Name = "DgvInfMaintenance"
+        DgvInfMaintenance.ReadOnly = True
+        DgvInfMaintenance.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+        DgvInfMaintenance.Size = New Size(554, 437)
+        DgvInfMaintenance.TabIndex = 22
         ' 
-        ' TxtPlate
+        ' CbVehPlateMaintenance
         ' 
-        TxtPlate.Font = New Font("Segoe UI", 12F)
-        TxtPlate.Location = New Point(8, 117)
-        TxtPlate.Name = "TxtPlate"
-        TxtPlate.PlaceholderText = "Placa"
-        TxtPlate.Size = New Size(160, 29)
-        TxtPlate.TabIndex = 26
+        CbVehPlateMaintenance.Font = New Font("Segoe UI", 12F)
+        CbVehPlateMaintenance.FormattingEnabled = True
+        CbVehPlateMaintenance.Location = New Point(12, 33)
+        CbVehPlateMaintenance.Name = "CbVehPlateMaintenance"
+        CbVehPlateMaintenance.Size = New Size(200, 29)
+        CbVehPlateMaintenance.TabIndex = 33
         ' 
-        ' TxtYear
+        ' Label1
         ' 
-        TxtYear.Font = New Font("Segoe UI", 12F)
-        TxtYear.Location = New Point(8, 82)
-        TxtYear.Name = "TxtYear"
-        TxtYear.PlaceholderText = "Año"
-        TxtYear.Size = New Size(160, 29)
-        TxtYear.TabIndex = 25
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 12F)
+        Label1.Location = New Point(12, 9)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(132, 21)
+        Label1.TabIndex = 34
+        Label1.Text = "Placa de vehículo:"
         ' 
-        ' TxtModel
+        ' DtpMaintenance
         ' 
-        TxtModel.Font = New Font("Segoe UI", 12F)
-        TxtModel.Location = New Point(8, 47)
-        TxtModel.Name = "TxtModel"
-        TxtModel.PlaceholderText = "Modelo"
-        TxtModel.Size = New Size(160, 29)
-        TxtModel.TabIndex = 24
+        DtpMaintenance.Font = New Font("Segoe UI", 12F)
+        DtpMaintenance.Location = New Point(12, 89)
+        DtpMaintenance.Name = "DtpMaintenance"
+        DtpMaintenance.Size = New Size(200, 29)
+        DtpMaintenance.TabIndex = 35
         ' 
-        ' TxtBrand
+        ' Label2
         ' 
-        TxtBrand.Font = New Font("Segoe UI", 12F)
-        TxtBrand.Location = New Point(8, 12)
-        TxtBrand.Name = "TxtBrand"
-        TxtBrand.PlaceholderText = "Marca"
-        TxtBrand.Size = New Size(160, 29)
-        TxtBrand.TabIndex = 23
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 12F)
+        Label2.Location = New Point(12, 65)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(188, 21)
+        Label2.TabIndex = 36
+        Label2.Text = "Fecha del mantenimiento:"
         ' 
-        ' DgvInfVehicles
+        ' TxtDescriptionMaintenance
         ' 
-        DgvInfVehicles.AllowUserToAddRows = False
-        DgvInfVehicles.AllowUserToDeleteRows = False
-        DgvInfVehicles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-        DgvInfVehicles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedHeaders
-        DgvInfVehicles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvInfVehicles.Location = New Point(182, 12)
-        DgvInfVehicles.Name = "DgvInfVehicles"
-        DgvInfVehicles.ReadOnly = True
-        DgvInfVehicles.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DgvInfVehicles.Size = New Size(594, 437)
-        DgvInfVehicles.TabIndex = 22
+        TxtDescriptionMaintenance.Font = New Font("Segoe UI", 12F)
+        TxtDescriptionMaintenance.Location = New Point(12, 201)
+        TxtDescriptionMaintenance.Multiline = True
+        TxtDescriptionMaintenance.Name = "TxtDescriptionMaintenance"
+        TxtDescriptionMaintenance.Size = New Size(200, 75)
+        TxtDescriptionMaintenance.TabIndex = 37
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 12F)
+        Label3.Location = New Point(12, 177)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(94, 21)
+        Label3.TabIndex = 38
+        Label3.Text = "Descripción:"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 12F)
+        Label4.Location = New Point(12, 121)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(79, 21)
+        Label4.TabIndex = 39
+        Label4.Text = "Mecánico:"
+        ' 
+        ' CbNameMechanic
+        ' 
+        CbNameMechanic.Font = New Font("Segoe UI", 12F)
+        CbNameMechanic.FormattingEnabled = True
+        CbNameMechanic.Location = New Point(12, 145)
+        CbNameMechanic.Name = "CbNameMechanic"
+        CbNameMechanic.Size = New Size(200, 29)
+        CbNameMechanic.TabIndex = 40
         ' 
         ' MaintenanceForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(784, 461)
-        Controls.Add(BtnUpdateVehicle)
-        Controls.Add(BtnDeleteVehicle)
+        Controls.Add(CbNameMechanic)
+        Controls.Add(Label4)
+        Controls.Add(Label3)
+        Controls.Add(TxtDescriptionMaintenance)
+        Controls.Add(Label2)
+        Controls.Add(DtpMaintenance)
+        Controls.Add(Label1)
+        Controls.Add(CbVehPlateMaintenance)
         Controls.Add(BtnToMainMenu)
         Controls.Add(BtnCleanInputs)
-        Controls.Add(BtnRegVehicle)
-        Controls.Add(TxtFuel)
-        Controls.Add(TxtPlate)
-        Controls.Add(TxtYear)
-        Controls.Add(TxtModel)
-        Controls.Add(TxtBrand)
-        Controls.Add(DgvInfVehicles)
+        Controls.Add(BtnRegMaintenance)
+        Controls.Add(DgvInfMaintenance)
         Name = "MaintenanceForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "MaintenanceForm"
-        CType(DgvInfVehicles, ComponentModel.ISupportInitialize).EndInit()
+        CType(DgvInfMaintenance, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents BtnUpdateVehicle As Button
-    Friend WithEvents BtnDeleteVehicle As Button
     Friend WithEvents BtnToMainMenu As Button
     Friend WithEvents BtnCleanInputs As Button
-    Friend WithEvents BtnRegVehicle As Button
-    Friend WithEvents TxtFuel As TextBox
-    Friend WithEvents TxtPlate As TextBox
-    Friend WithEvents TxtYear As TextBox
-    Friend WithEvents TxtModel As TextBox
-    Friend WithEvents TxtBrand As TextBox
-    Friend WithEvents DgvInfVehicles As DataGridView
+    Friend WithEvents BtnRegMaintenance As Button
+    Friend WithEvents DgvInfMaintenance As DataGridView
+    Friend WithEvents CbVehPlateMaintenance As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents DtpMaintenance As DateTimePicker
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TxtDescriptionMaintenance As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents CbNameMechanic As ComboBox
 End Class

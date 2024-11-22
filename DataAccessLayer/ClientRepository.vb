@@ -80,5 +80,18 @@ Public Class ClientRepository
         End Using
     End Sub
 
+    Public Function GetCustomersForComboBox() As DataTable
+        Dim query = "SELECT id_customer, name, identity_number FROM customers"
+        Dim dataTable As New DataTable()
+
+        Using connection = dbConnection.GetConnection()
+            Using adapter As New SqlDataAdapter(query, connection)
+                adapter.Fill(dataTable)
+            End Using
+        End Using
+
+        Return dataTable
+    End Function
+
 
 End Class

@@ -22,180 +22,252 @@ Partial Class BookingForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        BtnUpdateBooking = New Button()
-        BtnDeleteBooking = New Button()
-        BtnToMainMenu = New Button()
-        BtnCleanInputs = New Button()
-        BtnRegBooking = New Button()
-        DgvInfBookings = New DataGridView()
+        BtnMainMenu = New Button()
         CbCustomersBooking = New ComboBox()
-        Me.CbVehiclesBooking = New ComboBox()
-        DtpStart = New DateTimePicker()
         Label1 = New Label()
         Label2 = New Label()
+        CbCusIdentityBooking = New ComboBox()
+        Label3 = New Label()
+        CbVehBrandBooking = New ComboBox()
+        Label4 = New Label()
+        CbVehModelBooking = New ComboBox()
+        Label5 = New Label()
+        DtpStart = New DateTimePicker()
+        Label6 = New Label()
         DtpEnd = New DateTimePicker()
-        CType(DgvInfBookings, ComponentModel.ISupportInitialize).BeginInit()
+        BtnRegBooking = New Button()
+        BtnUpdBooking = New Button()
+        BtnDelBooking = New Button()
+        BtnCleanInputs = New Button()
+        DgvInfBooking = New DataGridView()
+        CType(DgvInfBooking, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' BtnUpdateBooking
+        ' BtnMainMenu
         ' 
-        BtnUpdateBooking.Font = New Font("Segoe UI", 12F)
-        BtnUpdateBooking.Location = New Point(8, 268)
-        BtnUpdateBooking.Name = "BtnUpdateBooking"
-        BtnUpdateBooking.Size = New Size(160, 31)
-        BtnUpdateBooking.TabIndex = 32
-        BtnUpdateBooking.Text = "Actualizar reserva"
-        BtnUpdateBooking.UseVisualStyleBackColor = True
-        ' 
-        ' BtnDeleteBooking
-        ' 
-        BtnDeleteBooking.Font = New Font("Segoe UI", 12F)
-        BtnDeleteBooking.Location = New Point(8, 231)
-        BtnDeleteBooking.Name = "BtnDeleteBooking"
-        BtnDeleteBooking.Size = New Size(160, 31)
-        BtnDeleteBooking.TabIndex = 31
-        BtnDeleteBooking.Text = "Eliminar reserva"
-        BtnDeleteBooking.UseVisualStyleBackColor = True
-        ' 
-        ' BtnToMainMenu
-        ' 
-        BtnToMainMenu.AutoSize = True
-        BtnToMainMenu.Font = New Font("Segoe UI", 12F)
-        BtnToMainMenu.Location = New Point(8, 418)
-        BtnToMainMenu.Name = "BtnToMainMenu"
-        BtnToMainMenu.Size = New Size(160, 31)
-        BtnToMainMenu.TabIndex = 30
-        BtnToMainMenu.Text = "Volver al menú"
-        BtnToMainMenu.UseVisualStyleBackColor = True
-        ' 
-        ' BtnCleanInputs
-        ' 
-        BtnCleanInputs.AutoSize = True
-        BtnCleanInputs.Font = New Font("Segoe UI", 12F)
-        BtnCleanInputs.Location = New Point(8, 305)
-        BtnCleanInputs.Name = "BtnCleanInputs"
-        BtnCleanInputs.Size = New Size(160, 31)
-        BtnCleanInputs.TabIndex = 29
-        BtnCleanInputs.Text = "Limpiar campos"
-        BtnCleanInputs.UseVisualStyleBackColor = True
-        ' 
-        ' BtnRegBooking
-        ' 
-        BtnRegBooking.AutoSize = True
-        BtnRegBooking.Font = New Font("Segoe UI", 12F)
-        BtnRegBooking.Location = New Point(8, 194)
-        BtnRegBooking.Name = "BtnRegBooking"
-        BtnRegBooking.Size = New Size(160, 31)
-        BtnRegBooking.TabIndex = 28
-        BtnRegBooking.Text = "Registrar reserva"
-        BtnRegBooking.UseVisualStyleBackColor = True
-        ' 
-        ' DgvInfBookings
-        ' 
-        DgvInfBookings.AllowUserToAddRows = False
-        DgvInfBookings.AllowUserToDeleteRows = False
-        DgvInfBookings.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-        DgvInfBookings.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedHeaders
-        DgvInfBookings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvInfBookings.Location = New Point(174, 12)
-        DgvInfBookings.Name = "DgvInfBookings"
-        DgvInfBookings.ReadOnly = True
-        DgvInfBookings.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DgvInfBookings.Size = New Size(602, 437)
-        DgvInfBookings.TabIndex = 22
+        BtnMainMenu.AutoSize = True
+        BtnMainMenu.Font = New Font("Segoe UI", 12F)
+        BtnMainMenu.Location = New Point(12, 418)
+        BtnMainMenu.Name = "BtnMainMenu"
+        BtnMainMenu.Size = New Size(156, 31)
+        BtnMainMenu.TabIndex = 0
+        BtnMainMenu.Text = "Volver al menú"
+        BtnMainMenu.UseVisualStyleBackColor = True
         ' 
         ' CbCustomersBooking
         ' 
         CbCustomersBooking.Font = New Font("Segoe UI", 12F)
         CbCustomersBooking.FormattingEnabled = True
-        CbCustomersBooking.Location = New Point(8, 12)
+        CbCustomersBooking.Location = New Point(12, 33)
         CbCustomersBooking.Name = "CbCustomersBooking"
-        CbCustomersBooking.Size = New Size(160, 29)
-        CbCustomersBooking.TabIndex = 33
-        CbCustomersBooking.Text = "Cliente"
-        ' 
-        ' CbVehiclesBooking
-        ' 
-        Me.CbVehiclesBooking.Font = New Font("Segoe UI", 12F)
-        Me.CbVehiclesBooking.FormattingEnabled = True
-        Me.CbVehiclesBooking.Location = New Point(8, 47)
-        Me.CbVehiclesBooking.Name = "CbVehiclesBooking"
-        Me.CbVehiclesBooking.Size = New Size(160, 29)
-        Me.CbVehiclesBooking.TabIndex = 34
-        Me.CbVehiclesBooking.Text = "Vehículo"
-        ' 
-        ' DtpStart
-        ' 
-        DtpStart.Font = New Font("Segoe UI", 12F)
-        DtpStart.Location = New Point(8, 103)
-        DtpStart.Name = "DtpStart"
-        DtpStart.Size = New Size(160, 29)
-        DtpStart.TabIndex = 35
+        CbCustomersBooking.Size = New Size(156, 29)
+        CbCustomersBooking.TabIndex = 1
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 12F)
-        Label1.Location = New Point(8, 79)
+        Label1.Location = New Point(12, 9)
         Label1.Name = "Label1"
-        Label1.Size = New Size(101, 21)
-        Label1.TabIndex = 36
-        Label1.Text = "Fecha inicial :"
+        Label1.Size = New Size(145, 21)
+        Label1.TabIndex = 3
+        Label1.Text = "Nombre del cliente:"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 12F)
-        Label2.Location = New Point(8, 135)
+        Label2.Location = New Point(174, 9)
         Label2.Name = "Label2"
-        Label2.Size = New Size(87, 21)
-        Label2.TabIndex = 37
-        Label2.Text = "Fecha final:"
+        Label2.Size = New Size(135, 21)
+        Label2.TabIndex = 4
+        Label2.Text = "Cédula del cliente:"
+        ' 
+        ' CbCusIdentityBooking
+        ' 
+        CbCusIdentityBooking.Font = New Font("Segoe UI", 12F)
+        CbCusIdentityBooking.FormattingEnabled = True
+        CbCusIdentityBooking.Location = New Point(174, 33)
+        CbCusIdentityBooking.Name = "CbCusIdentityBooking"
+        CbCusIdentityBooking.Size = New Size(156, 29)
+        CbCusIdentityBooking.TabIndex = 5
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 12F)
+        Label3.Location = New Point(12, 65)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(143, 21)
+        Label3.TabIndex = 6
+        Label3.Text = "Marca del vehículo:"
+        ' 
+        ' CbVehBrandBooking
+        ' 
+        CbVehBrandBooking.Font = New Font("Segoe UI", 12F)
+        CbVehBrandBooking.FormattingEnabled = True
+        CbVehBrandBooking.Location = New Point(12, 89)
+        CbVehBrandBooking.Name = "CbVehBrandBooking"
+        CbVehBrandBooking.Size = New Size(156, 29)
+        CbVehBrandBooking.TabIndex = 7
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 12F)
+        Label4.Location = New Point(174, 65)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(153, 21)
+        Label4.TabIndex = 8
+        Label4.Text = "Modelo del vehículo:"
+        ' 
+        ' CbVehModelBooking
+        ' 
+        CbVehModelBooking.Font = New Font("Segoe UI", 12F)
+        CbVehModelBooking.FormattingEnabled = True
+        CbVehModelBooking.Location = New Point(174, 89)
+        CbVehModelBooking.Name = "CbVehModelBooking"
+        CbVehModelBooking.Size = New Size(156, 29)
+        CbVehModelBooking.TabIndex = 9
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 12F)
+        Label5.Location = New Point(12, 121)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(115, 21)
+        Label5.TabIndex = 10
+        Label5.Text = "Fecha de inicio:"
+        ' 
+        ' DtpStart
+        ' 
+        DtpStart.Font = New Font("Segoe UI", 12F)
+        DtpStart.Location = New Point(12, 145)
+        DtpStart.Name = "DtpStart"
+        DtpStart.Size = New Size(156, 29)
+        DtpStart.TabIndex = 11
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI", 12F)
+        Label6.Location = New Point(174, 121)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(156, 21)
+        Label6.TabIndex = 12
+        Label6.Text = "Fecha de finalización:"
         ' 
         ' DtpEnd
         ' 
         DtpEnd.Font = New Font("Segoe UI", 12F)
-        DtpEnd.Location = New Point(8, 159)
+        DtpEnd.Location = New Point(174, 145)
         DtpEnd.Name = "DtpEnd"
-        DtpEnd.Size = New Size(160, 29)
-        DtpEnd.TabIndex = 38
+        DtpEnd.Size = New Size(156, 29)
+        DtpEnd.TabIndex = 13
+        ' 
+        ' BtnRegBooking
+        ' 
+        BtnRegBooking.AutoSize = True
+        BtnRegBooking.Font = New Font("Segoe UI", 12F)
+        BtnRegBooking.Location = New Point(12, 180)
+        BtnRegBooking.Name = "BtnRegBooking"
+        BtnRegBooking.Size = New Size(156, 31)
+        BtnRegBooking.TabIndex = 14
+        BtnRegBooking.Text = "Registrar reserva"
+        BtnRegBooking.UseVisualStyleBackColor = True
+        ' 
+        ' BtnUpdBooking
+        ' 
+        BtnUpdBooking.AutoSize = True
+        BtnUpdBooking.Font = New Font("Segoe UI", 12F)
+        BtnUpdBooking.Location = New Point(174, 180)
+        BtnUpdBooking.Name = "BtnUpdBooking"
+        BtnUpdBooking.Size = New Size(156, 31)
+        BtnUpdBooking.TabIndex = 15
+        BtnUpdBooking.Text = "Actualizar reserva"
+        BtnUpdBooking.UseVisualStyleBackColor = True
+        ' 
+        ' BtnDelBooking
+        ' 
+        BtnDelBooking.AutoSize = True
+        BtnDelBooking.Font = New Font("Segoe UI", 12F)
+        BtnDelBooking.Location = New Point(12, 217)
+        BtnDelBooking.Name = "BtnDelBooking"
+        BtnDelBooking.Size = New Size(156, 31)
+        BtnDelBooking.TabIndex = 16
+        BtnDelBooking.Text = "Eliminar reserva"
+        BtnDelBooking.UseVisualStyleBackColor = True
+        ' 
+        ' BtnCleanInputs
+        ' 
+        BtnCleanInputs.AutoSize = True
+        BtnCleanInputs.Font = New Font("Segoe UI", 12F)
+        BtnCleanInputs.Location = New Point(174, 217)
+        BtnCleanInputs.Name = "BtnCleanInputs"
+        BtnCleanInputs.Size = New Size(156, 31)
+        BtnCleanInputs.TabIndex = 17
+        BtnCleanInputs.Text = "Limpiar campos"
+        BtnCleanInputs.UseVisualStyleBackColor = True
+        ' 
+        ' DgvInfBooking
+        ' 
+        DgvInfBooking.AllowUserToAddRows = False
+        DgvInfBooking.AllowUserToDeleteRows = False
+        DgvInfBooking.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DgvInfBooking.Location = New Point(336, 12)
+        DgvInfBooking.Name = "DgvInfBooking"
+        DgvInfBooking.ReadOnly = True
+        DgvInfBooking.Size = New Size(436, 437)
+        DgvInfBooking.TabIndex = 18
         ' 
         ' BookingForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(784, 461)
+        Controls.Add(DgvInfBooking)
+        Controls.Add(BtnCleanInputs)
+        Controls.Add(BtnDelBooking)
+        Controls.Add(BtnUpdBooking)
+        Controls.Add(BtnRegBooking)
         Controls.Add(DtpEnd)
+        Controls.Add(Label6)
+        Controls.Add(DtpStart)
+        Controls.Add(Label5)
+        Controls.Add(CbVehModelBooking)
+        Controls.Add(Label4)
+        Controls.Add(CbVehBrandBooking)
+        Controls.Add(Label3)
+        Controls.Add(CbCusIdentityBooking)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Controls.Add(DtpStart)
-        Controls.Add(Me.CbVehiclesBooking)
         Controls.Add(CbCustomersBooking)
-        Controls.Add(BtnUpdateBooking)
-        Controls.Add(BtnDeleteBooking)
-        Controls.Add(BtnToMainMenu)
-        Controls.Add(BtnCleanInputs)
-        Controls.Add(BtnRegBooking)
-        Controls.Add(DgvInfBookings)
+        Controls.Add(BtnMainMenu)
         Name = "BookingForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "BookingForm"
-        CType(DgvInfBookings, ComponentModel.ISupportInitialize).EndInit()
+        CType(DgvInfBooking, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents BtnUpdateBooking As Button
-    Friend WithEvents BtnDeleteBooking As Button
-    Friend WithEvents BtnToMainMenu As Button
-    Friend WithEvents BtnCleanInputs As Button
-    Friend WithEvents BtnRegBooking As Button
-    Friend WithEvents TxtFuel As TextBox
-    Friend WithEvents TxtPlate As TextBox
-    Friend WithEvents DgvInfBookings As DataGridView
+    Friend WithEvents BtnMainMenu As Button
     Friend WithEvents CbCustomersBooking As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents DtpStart As DateTimePicker
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents CbCusIdentityBooking As ComboBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents CbVehBrandBooking As ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents CbVehModelBooking As ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents DtpStart As DateTimePicker
+    Friend WithEvents Label6 As Label
     Friend WithEvents DtpEnd As DateTimePicker
+    Friend WithEvents BtnRegBooking As Button
+    Friend WithEvents BtnUpdBooking As Button
+    Friend WithEvents BtnDelBooking As Button
+    Friend WithEvents BtnCleanInputs As Button
+    Friend WithEvents DgvInfBooking As DataGridView
 End Class

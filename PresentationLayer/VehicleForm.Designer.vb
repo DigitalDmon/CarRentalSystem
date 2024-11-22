@@ -165,6 +165,7 @@ Partial Class VehicleForm
         Controls.Add(TxtBrand)
         Controls.Add(DgvInfVehicles)
         Name = "VehicleForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "VehicleForm"
         CType(DgvInfVehicles, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

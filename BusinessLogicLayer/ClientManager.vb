@@ -67,5 +67,9 @@ Public Class ClientManager
         End Try
     End Function
 
+    Public Function GetCustomersForComboBox() As DataTable
+        Return clientRepository.GetCustomersForComboBox()
+    End Function
+
 
 End Class

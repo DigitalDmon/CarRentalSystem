@@ -66,4 +66,35 @@ Public Class VehicleRepository
         End Using
     End Sub
 
+    Public Function GetVehicleBrands() As DataTable
+        Dim query = "SELECT DISTINCT brand FROM vehicles"
+        Dim dataTable As New DataTable()
+
+        Using connection = dbConnection.GetConnection()
+            Using adapter As New SqlDataAdapter(query, connection)
+                adapter.Fill(dataTable)
+            End Using
+        End Using
+
+        Return dataTable
+    End Function
+
+    Public Function GetModelsByBrand(brand As String) As DataTable
+        Dim query = "SELECT id_vehicle, model FROM vehicles WHERE brand = @brand"
+        Dim dataTable As New DataTable()
+
+        Using connection = dbConnection.GetConnection()
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@brand", brand)
+
+                Using adapter As New SqlDataAdapter(command)
+                    adapter.Fill(dataTable)
+                End Using
+            End Using
+        End Using
+
+        Return dataTable
+    End Function
+
+
 End Class
