@@ -1,97 +1,83 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Data
 
 Public Class ClientRepository
 
-    ' Conexión a la base de datos
-    Private ReadOnly dbConnection As New DatabaseConnection()
+    Private ReadOnly connection As New DatabaseConnection()
 
-    ' Método Obtener todos los clientes
-    Public Function GetAllClients() As DataSet
-        Dim dataSet As New DataSet()
-        Try
-            Using connection As SqlConnection = dbConnection.GetConnection()
-                Dim query As String = "SELECT * FROM customers"
-                Dim adapter As New SqlDataAdapter(query, connection)
-                adapter.Fill(dataSet, "customers")
+    Public Function GetAll() As List(Of Customer)
+
+        Dim customers As New List(Of Customer)()
+        Dim query As String = "SELECT * FROM customers"
+
+        Using conn As SqlConnection = connection.GetConnection()
+            conn.Open()
+            Using cmd As New SqlCommand(query, conn)
+                Using reader As SqlDataReader = cmd.ExecuteReader()
+                    While reader.Read()
+                        Dim customer As New Customer With {
+                            .IdCustomer = Convert.ToInt32(reader("id_customer")),
+                            .Name = reader("name").ToString(),
+                            .Lastname = reader("lastname").ToString(),
+                            .IdentityNumber = reader("identity_number").ToString(),
+                            .PhoneNumber = reader("phone_number").ToString(),
+                            .Email = reader("email").ToString()
+                        }
+                        customers.Add(customer)
+                    End While
+                End Using
             End Using
-        Catch ex As SqlException
-            Throw New ApplicationException("Error fetching clients from the database.", ex)
-        End Try
-        Return dataSet
+        End Using
+
+        Return customers
     End Function
 
+    Public Function Insert(customer As Customer) As Boolean
 
-    ' Método para agregar un nuevo cliente
-    Public Sub RegisterClient(name As String, lastname As String, identity_number As String, phone_number As String, email As String)
-
-        ' Query para insertar un nuevo cliente
         Dim query As String = "INSERT INTO customers (name, lastname, identity_number, phone_number, email) VALUES (@name, @lastname, @identity_number, @phone_number, @email)"
 
-        ' Usar la conexión a la base de datos
-        Using connection As SqlConnection = dbConnection.GetConnection()
-
-            ' Crear un nuevo comando SQL
-            Using command As New SqlCommand(query, connection)
-
-                ' Agregar los parámetros necesarios
-                command.Parameters.AddWithValue("@name", name)
-                command.Parameters.AddWithValue("@lastname", lastname)
-                command.Parameters.AddWithValue("@identity_number", identity_number)
-                command.Parameters.AddWithValue("@phone_number", phone_number)
-                command.Parameters.AddWithValue("@email", email)
-
-                ' Abrir la conexión
-                connection.Open()
-                ' Ejecutar el comando SQL
-                command.ExecuteNonQuery()
-
-            End Using
-
-        End Using
-
-    End Sub
-
-    Public Sub DeleteClient(clientId As Integer)
-        Dim query As String = "DELETE FROM customers WHERE id_customer = @id"
-
-        Using connection As SqlConnection = dbConnection.GetConnection()
-            Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@id", clientId)
-                connection.Open()
-                command.ExecuteNonQuery()
+        Using conn As SqlConnection = connection.GetConnection()
+            conn.Open()
+            Using cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@name", customer.Name)
+                cmd.Parameters.AddWithValue("@lastname", customer.Lastname)
+                cmd.Parameters.AddWithValue("@identity_number", customer.IdentityNumber)
+                cmd.Parameters.AddWithValue("@phone_number", customer.PhoneNumber)
+                cmd.Parameters.AddWithValue("@email", customer.Email)
+                Return cmd.ExecuteNonQuery() > 0
             End Using
         End Using
-    End Sub
-
-    Public Sub UpdateClient(clientId As Integer, name As String, lastname As String, identity_number As String, phone_number As String, email As String)
-        Dim query As String = "UPDATE customers SET name = @name, lastname = @lastname, identity_number = @identity_number, phone_number = @phone_number, email = @email WHERE id_customer = @id"
-
-        Using connection As SqlConnection = dbConnection.GetConnection()
-            Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@id", clientId)
-                command.Parameters.AddWithValue("@name", name)
-                command.Parameters.AddWithValue("@lastname", lastname)
-                command.Parameters.AddWithValue("@identity_number", identity_number)
-                command.Parameters.AddWithValue("@phone_number", phone_number)
-                command.Parameters.AddWithValue("@email", email)
-                connection.Open()
-                command.ExecuteNonQuery()
-            End Using
-        End Using
-    End Sub
-
-    Public Function GetCustomersForComboBox() As DataTable
-        Dim query = "SELECT id_customer, name, identity_number FROM customers"
-        Dim dataTable As New DataTable()
-
-        Using connection = dbConnection.GetConnection()
-            Using adapter As New SqlDataAdapter(query, connection)
-                adapter.Fill(dataTable)
-            End Using
-        End Using
-
-        Return dataTable
     End Function
+
+    Public Function Delete(customerId As Integer) As Boolean
+        Dim query As String = "DELETE FROM customers WHERE id_customer = @id_customer"
+
+        Using conn As SqlConnection = connection.GetConnection()
+            conn.Open()
+            Using cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@id_customer", customerId)
+                Return cmd.ExecuteNonQuery() > 0
+            End Using
+        End Using
+    End Function
+
+    Public Function Update(customer As Customer) As Boolean
+        Dim query As String = "UPDATE customers SET name = @name, lastname = @lastname, identity_number = @identity_number, phone_number = @phone_number, email = @email WHERE id_customer = @id_customer"
+
+        Using conn As SqlConnection = connection.GetConnection()
+            conn.Open()
+            Using cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@name", customer.Name)
+                cmd.Parameters.AddWithValue("@lastname", customer.Lastname)
+                cmd.Parameters.AddWithValue("@identity_number", customer.IdentityNumber)
+                cmd.Parameters.AddWithValue("@phone_number", customer.PhoneNumber)
+                cmd.Parameters.AddWithValue("@email", customer.Email)
+                cmd.Parameters.AddWithValue("@id_customer", customer.IdCustomer)
+                Return cmd.ExecuteNonQuery() > 0
+            End Using
+        End Using
+    End Function
+
 
 
 End Class

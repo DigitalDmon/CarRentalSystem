@@ -1,100 +1,79 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class VehicleRepository
-
-    ' Conexión a la base de datos
+Public Class VehicleDataAccess
     Private ReadOnly dbConnection As New DatabaseConnection()
 
-    ' Obtener todos los vehículos
-    Public Function GetAllVehicles() As DataSet
-        Dim query As String = "SELECT * FROM vehicles"
-        Dim dataSet As New DataSet()
-
-        Using connection As SqlConnection = dbConnection.GetConnection()
-            Dim adapter As New SqlDataAdapter(query, connection)
-            adapter.Fill(dataSet, "vehicles")
-        End Using
-
-        Return dataSet
-    End Function
-
-    ' Agregar un vehículo
-    Public Sub AddVehicle(brand As String, model As String, year As Integer, plate As String, fuel As String)
-        Dim query As String = "INSERT INTO vehicles (brand, model, year, plate, fuel) VALUES (@brand, @model, @year, @plate, @fuel)"
-
-        Using connection As SqlConnection = dbConnection.GetConnection()
-            Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@brand", brand)
-                command.Parameters.AddWithValue("@model", model)
-                command.Parameters.AddWithValue("@year", year)
-                command.Parameters.AddWithValue("@plate", plate)
-                command.Parameters.AddWithValue("@fuel", fuel)
-                connection.Open()
-                command.ExecuteNonQuery()
-            End Using
-        End Using
-    End Sub
-
-    ' Actualizar un vehículo
-    Public Sub UpdateVehicle(id_vehicle As Integer, brand As String, model As String, year As Integer, plate As String, fuel As String)
-        Dim query As String = "UPDATE vehicles SET brand = @brand, model = @model, year = @year, plate = @plate, fuel = @fuel WHERE id_vehicle = @id_vehicle"
-
-        Using connection As SqlConnection = dbConnection.GetConnection()
-            Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@id_vehicle", id_vehicle)
-                command.Parameters.AddWithValue("@brand", brand)
-                command.Parameters.AddWithValue("@model", model)
-                command.Parameters.AddWithValue("@year", year)
-                command.Parameters.AddWithValue("@plate", plate)
-                command.Parameters.AddWithValue("@fuel", fuel)
-                connection.Open()
-                command.ExecuteNonQuery()
-            End Using
-        End Using
-    End Sub
-
-    ' Eliminar un vehículo
-    Public Sub DeleteVehicle(id_vehicle As Integer)
-        Dim query As String = "DELETE FROM vehicles WHERE id_vehicle = @id_vehicle"
-
-        Using connection As SqlConnection = dbConnection.GetConnection()
-            Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@id_vehicle", id_vehicle)
-                connection.Open()
-                command.ExecuteNonQuery()
-            End Using
-        End Using
-    End Sub
-
-    Public Function GetVehicleBrands() As DataTable
-        Dim query = "SELECT DISTINCT brand FROM vehicles"
-        Dim dataTable As New DataTable()
-
-        Using connection = dbConnection.GetConnection()
-            Using adapter As New SqlDataAdapter(query, connection)
-                adapter.Fill(dataTable)
-            End Using
-        End Using
-
-        Return dataTable
-    End Function
-
-    Public Function GetModelsByBrand(brand As String) As DataTable
-        Dim query = "SELECT id_vehicle, model FROM vehicles WHERE brand = @brand"
-        Dim dataTable As New DataTable()
-
-        Using connection = dbConnection.GetConnection()
-            Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@brand", brand)
-
-                Using adapter As New SqlDataAdapter(command)
-                    adapter.Fill(dataTable)
+    Public Function GetAllVehicles() As List(Of Vehicle)
+        Dim vehicles As New List(Of Vehicle)()
+        Try
+            Using conn As SqlConnection = dbConnection.GetConnection()
+                conn.Open()
+                Dim query As String = "SELECT * FROM vehicles"
+                Using cmd As New SqlCommand(query, conn)
+                    Using reader As SqlDataReader = cmd.ExecuteReader()
+                        While reader.Read()
+                            Dim vehicle As New Vehicle With {
+                                .IdVehicle = Convert.ToInt32(reader("id_vehicle")),
+                                .Brand = reader("brand").ToString(),
+                                .Model = reader("model").ToString(),
+                                .Year = Convert.ToInt32(reader("year")),
+                                .Plate = reader("plate").ToString(),
+                                .Fuel = reader("fuel").ToString()
+                            }
+                            vehicles.Add(vehicle)
+                        End While
+                    End Using
                 End Using
             End Using
-        End Using
-
-        Return dataTable
+        Catch ex As Exception
+            Throw New Exception("Error al obtener la lista de vehículos: " & ex.Message)
+        End Try
+        Return vehicles
     End Function
 
+    ' Método para registrar un vehículo
+    Public Function RegisterVehicle(vehicle As Vehicle) As Boolean
+        Try
+            Using conn As SqlConnection = dbConnection.GetConnection()
+                conn.Open()
+                Dim query As String = "INSERT INTO vehicles (brand, model, year, plate, fuel) VALUES (@brand, @model, @year, @plate, @fuel)"
+                Using cmd As New SqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@brand", vehicle.Brand)
+                    cmd.Parameters.AddWithValue("@model", vehicle.Model)
+                    cmd.Parameters.AddWithValue("@year", vehicle.Year)
+                    cmd.Parameters.AddWithValue("@plate", vehicle.Plate)
+                    cmd.Parameters.AddWithValue("@fuel", vehicle.Fuel)
+                    cmd.ExecuteNonQuery()
+                End Using
+                Return True
+            End Using
+        Catch ex As Exception
+            ' Manejo de errores
+            Throw New Exception("Error al registrar el vehículo: " & ex.Message)
+        End Try
+    End Function
+
+    ' Método para actualizar un vehículo
+    Public Function UpdateVehicle(vehicle As Vehicle) As Boolean
+        Try
+            Using conn As SqlConnection = dbConnection.GetConnection()
+                conn.Open()
+                Dim query As String = "UPDATE vehicles SET brand = @brand, model = @model, year = @year, plate = @plate, fuel = @fuel WHERE id_vehicle = @id"
+                Using cmd As New SqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@brand", vehicle.Brand)
+                    cmd.Parameters.AddWithValue("@model", vehicle.Model)
+                    cmd.Parameters.AddWithValue("@year", vehicle.Year)
+                    cmd.Parameters.AddWithValue("@plate", vehicle.Plate)
+                    cmd.Parameters.AddWithValue("@fuel", vehicle.Fuel)
+                    cmd.Parameters.AddWithValue("@id", vehicle.IdVehicle)
+                    cmd.ExecuteNonQuery()
+                End Using
+                Return True
+            End Using
+        Catch ex As Exception
+            ' Manejo de errores
+            Throw New Exception("Error al actualizar el vehículo: " & ex.Message)
+        End Try
+    End Function
 
 End Class

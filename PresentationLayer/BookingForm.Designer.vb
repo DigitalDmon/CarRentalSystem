@@ -23,14 +23,14 @@ Partial Class BookingForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         BtnMainMenu = New Button()
-        CbCustomersBooking = New ComboBox()
+        CmbCustomers = New ComboBox()
         Label1 = New Label()
         Label2 = New Label()
-        CbCusIdentityBooking = New ComboBox()
+        CmbCusIdentity = New ComboBox()
         Label3 = New Label()
-        CbVehBrandBooking = New ComboBox()
+        CmbVehBrand = New ComboBox()
         Label4 = New Label()
-        CbVehModelBooking = New ComboBox()
+        CmbVehModel = New ComboBox()
         Label5 = New Label()
         DtpStart = New DateTimePicker()
         Label6 = New Label()
@@ -54,14 +54,14 @@ Partial Class BookingForm
         BtnMainMenu.Text = "Volver al menú"
         BtnMainMenu.UseVisualStyleBackColor = True
         ' 
-        ' CbCustomersBooking
+        ' CmbCustomers
         ' 
-        CbCustomersBooking.Font = New Font("Segoe UI", 12F)
-        CbCustomersBooking.FormattingEnabled = True
-        CbCustomersBooking.Location = New Point(12, 33)
-        CbCustomersBooking.Name = "CbCustomersBooking"
-        CbCustomersBooking.Size = New Size(156, 29)
-        CbCustomersBooking.TabIndex = 1
+        CmbCustomers.Font = New Font("Segoe UI", 12F)
+        CmbCustomers.FormattingEnabled = True
+        CmbCustomers.Location = New Point(12, 33)
+        CmbCustomers.Name = "CmbCustomers"
+        CmbCustomers.Size = New Size(156, 29)
+        CmbCustomers.TabIndex = 1
         ' 
         ' Label1
         ' 
@@ -83,14 +83,14 @@ Partial Class BookingForm
         Label2.TabIndex = 4
         Label2.Text = "Cédula del cliente:"
         ' 
-        ' CbCusIdentityBooking
+        ' CmbCusIdentity
         ' 
-        CbCusIdentityBooking.Font = New Font("Segoe UI", 12F)
-        CbCusIdentityBooking.FormattingEnabled = True
-        CbCusIdentityBooking.Location = New Point(174, 33)
-        CbCusIdentityBooking.Name = "CbCusIdentityBooking"
-        CbCusIdentityBooking.Size = New Size(156, 29)
-        CbCusIdentityBooking.TabIndex = 5
+        CmbCusIdentity.Font = New Font("Segoe UI", 12F)
+        CmbCusIdentity.FormattingEnabled = True
+        CmbCusIdentity.Location = New Point(174, 33)
+        CmbCusIdentity.Name = "CmbCusIdentity"
+        CmbCusIdentity.Size = New Size(156, 29)
+        CmbCusIdentity.TabIndex = 5
         ' 
         ' Label3
         ' 
@@ -102,14 +102,14 @@ Partial Class BookingForm
         Label3.TabIndex = 6
         Label3.Text = "Marca del vehículo:"
         ' 
-        ' CbVehBrandBooking
+        ' CmbVehBrand
         ' 
-        CbVehBrandBooking.Font = New Font("Segoe UI", 12F)
-        CbVehBrandBooking.FormattingEnabled = True
-        CbVehBrandBooking.Location = New Point(12, 89)
-        CbVehBrandBooking.Name = "CbVehBrandBooking"
-        CbVehBrandBooking.Size = New Size(156, 29)
-        CbVehBrandBooking.TabIndex = 7
+        CmbVehBrand.Font = New Font("Segoe UI", 12F)
+        CmbVehBrand.FormattingEnabled = True
+        CmbVehBrand.Location = New Point(12, 89)
+        CmbVehBrand.Name = "CmbVehBrand"
+        CmbVehBrand.Size = New Size(156, 29)
+        CmbVehBrand.TabIndex = 7
         ' 
         ' Label4
         ' 
@@ -121,14 +121,14 @@ Partial Class BookingForm
         Label4.TabIndex = 8
         Label4.Text = "Modelo del vehículo:"
         ' 
-        ' CbVehModelBooking
+        ' CmbVehModel
         ' 
-        CbVehModelBooking.Font = New Font("Segoe UI", 12F)
-        CbVehModelBooking.FormattingEnabled = True
-        CbVehModelBooking.Location = New Point(174, 89)
-        CbVehModelBooking.Name = "CbVehModelBooking"
-        CbVehModelBooking.Size = New Size(156, 29)
-        CbVehModelBooking.TabIndex = 9
+        CmbVehModel.Font = New Font("Segoe UI", 12F)
+        CmbVehModel.FormattingEnabled = True
+        CmbVehModel.Location = New Point(174, 89)
+        CmbVehModel.Name = "CmbVehModel"
+        CmbVehModel.Size = New Size(156, 29)
+        CmbVehModel.TabIndex = 9
         ' 
         ' Label5
         ' 
@@ -235,14 +235,14 @@ Partial Class BookingForm
         Controls.Add(Label6)
         Controls.Add(DtpStart)
         Controls.Add(Label5)
-        Controls.Add(CbVehModelBooking)
+        Controls.Add(CmbVehModel)
         Controls.Add(Label4)
-        Controls.Add(CbVehBrandBooking)
+        Controls.Add(CmbVehBrand)
         Controls.Add(Label3)
-        Controls.Add(CbCusIdentityBooking)
+        Controls.Add(CmbCusIdentity)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Controls.Add(CbCustomersBooking)
+        Controls.Add(CmbCustomers)
         Controls.Add(BtnMainMenu)
         Name = "BookingForm"
         StartPosition = FormStartPosition.CenterScreen
@@ -253,14 +253,14 @@ Partial Class BookingForm
     End Sub
 
     Friend WithEvents BtnMainMenu As Button
-    Friend WithEvents CbCustomersBooking As ComboBox
+    Friend WithEvents CmbCustomers As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents CbCusIdentityBooking As ComboBox
+    Friend WithEvents CmbCusIdentity As ComboBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents CbVehBrandBooking As ComboBox
+    Friend WithEvents CmbVehBrand As ComboBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents CbVehModelBooking As ComboBox
+    Friend WithEvents CmbVehModel As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents DtpStart As DateTimePicker
     Friend WithEvents Label6 As Label

@@ -1,4 +1,5 @@
-﻿Public Class Vehicle
+﻿' Modelo para la tabla "vehicles"
+Public Class Vehicle
     Public Property IdVehicle As Integer
     Public Property Brand As String
     Public Property Model As String

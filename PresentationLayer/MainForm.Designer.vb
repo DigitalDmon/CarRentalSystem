@@ -36,11 +36,11 @@ Partial Class MainForm
         BtnRegClient.Anchor = AnchorStyles.Top
         BtnRegClient.AutoSize = True
         BtnRegClient.Font = New Font("Segoe UI", 12F)
-        BtnRegClient.Location = New Point(296, 125)
+        BtnRegClient.Location = New Point(296, 104)
         BtnRegClient.Name = "BtnRegClient"
         BtnRegClient.Size = New Size(193, 31)
         BtnRegClient.TabIndex = 0
-        BtnRegClient.Text = "Registrar cliente"
+        BtnRegClient.Text = "Clientes"
         BtnRegClient.UseVisualStyleBackColor = True
         ' 
         ' BtnRegVechicle
@@ -48,11 +48,11 @@ Partial Class MainForm
         BtnRegVechicle.Anchor = AnchorStyles.Top
         BtnRegVechicle.AutoSize = True
         BtnRegVechicle.Font = New Font("Segoe UI", 12F)
-        BtnRegVechicle.Location = New Point(296, 305)
+        BtnRegVechicle.Location = New Point(296, 141)
         BtnRegVechicle.Name = "BtnRegVechicle"
         BtnRegVechicle.Size = New Size(193, 31)
         BtnRegVechicle.TabIndex = 1
-        BtnRegVechicle.Text = "Registrar vehículo"
+        BtnRegVechicle.Text = "Vehículos"
         BtnRegVechicle.UseVisualStyleBackColor = True
         ' 
         ' BtnRegPayment
@@ -60,11 +60,11 @@ Partial Class MainForm
         BtnRegPayment.Anchor = AnchorStyles.Top
         BtnRegPayment.AutoSize = True
         BtnRegPayment.Font = New Font("Segoe UI", 12F)
-        BtnRegPayment.Location = New Point(296, 260)
+        BtnRegPayment.Location = New Point(296, 252)
         BtnRegPayment.Name = "BtnRegPayment"
         BtnRegPayment.Size = New Size(193, 31)
         BtnRegPayment.TabIndex = 2
-        BtnRegPayment.Text = "Registrar pago"
+        BtnRegPayment.Text = "Pagos"
         BtnRegPayment.UseVisualStyleBackColor = True
         ' 
         ' BtnRegReservation
@@ -72,11 +72,11 @@ Partial Class MainForm
         BtnRegReservation.Anchor = AnchorStyles.Top
         BtnRegReservation.AutoSize = True
         BtnRegReservation.Font = New Font("Segoe UI", 12F)
-        BtnRegReservation.Location = New Point(296, 80)
+        BtnRegReservation.Location = New Point(296, 215)
         BtnRegReservation.Name = "BtnRegReservation"
         BtnRegReservation.Size = New Size(193, 31)
         BtnRegReservation.TabIndex = 3
-        BtnRegReservation.Text = "Registrar reserva"
+        BtnRegReservation.Text = "Reservas"
         BtnRegReservation.UseVisualStyleBackColor = True
         ' 
         ' BtnRegMaintenance
@@ -84,11 +84,11 @@ Partial Class MainForm
         BtnRegMaintenance.Anchor = AnchorStyles.Top
         BtnRegMaintenance.AutoSize = True
         BtnRegMaintenance.Font = New Font("Segoe UI", 12F)
-        BtnRegMaintenance.Location = New Point(296, 170)
+        BtnRegMaintenance.Location = New Point(296, 289)
         BtnRegMaintenance.Name = "BtnRegMaintenance"
         BtnRegMaintenance.Size = New Size(193, 31)
         BtnRegMaintenance.TabIndex = 4
-        BtnRegMaintenance.Text = "Registrar mantenimiento"
+        BtnRegMaintenance.Text = "Mantenimientos"
         BtnRegMaintenance.UseVisualStyleBackColor = True
         ' 
         ' BtnRegMechanic
@@ -96,18 +96,18 @@ Partial Class MainForm
         BtnRegMechanic.Anchor = AnchorStyles.Top
         BtnRegMechanic.AutoSize = True
         BtnRegMechanic.Font = New Font("Segoe UI", 12F)
-        BtnRegMechanic.Location = New Point(296, 215)
+        BtnRegMechanic.Location = New Point(296, 178)
         BtnRegMechanic.Name = "BtnRegMechanic"
         BtnRegMechanic.Size = New Size(193, 31)
         BtnRegMechanic.TabIndex = 5
-        BtnRegMechanic.Text = "Registrar mecánico"
+        BtnRegMechanic.Text = "Mecánicos"
         BtnRegMechanic.UseVisualStyleBackColor = True
         ' 
         ' BtnFinish
         ' 
         BtnFinish.AutoSize = True
         BtnFinish.Font = New Font("Segoe UI", 12F)
-        BtnFinish.Location = New Point(296, 350)
+        BtnFinish.Location = New Point(296, 326)
         BtnFinish.Name = "BtnFinish"
         BtnFinish.Size = New Size(193, 31)
         BtnFinish.TabIndex = 9

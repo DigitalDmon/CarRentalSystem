@@ -26,15 +26,17 @@ Partial Class MaintenanceForm
         BtnCleanInputs = New Button()
         BtnRegMaintenance = New Button()
         DgvInfMaintenance = New DataGridView()
-        CbVehPlateMaintenance = New ComboBox()
+        CmbVehPlate = New ComboBox()
         Label1 = New Label()
-        DtpMaintenance = New DateTimePicker()
-        Label2 = New Label()
         TxtDescriptionMaintenance = New TextBox()
         Label3 = New Label()
         Label4 = New Label()
-        CbNameMechanic = New ComboBox()
+        CmbIdentityMechanic = New ComboBox()
+        Label2 = New Label()
+        NudCost = New NumericUpDown()
+        BtnUpdMaintenance = New Button()
         CType(DgvInfMaintenance, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NudCost, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' BtnToMainMenu
@@ -52,7 +54,7 @@ Partial Class MaintenanceForm
         ' 
         BtnCleanInputs.AutoSize = True
         BtnCleanInputs.Font = New Font("Segoe UI", 12F)
-        BtnCleanInputs.Location = New Point(12, 319)
+        BtnCleanInputs.Location = New Point(12, 356)
         BtnCleanInputs.Name = "BtnCleanInputs"
         BtnCleanInputs.Size = New Size(200, 31)
         BtnCleanInputs.TabIndex = 29
@@ -67,7 +69,7 @@ Partial Class MaintenanceForm
         BtnRegMaintenance.Name = "BtnRegMaintenance"
         BtnRegMaintenance.Size = New Size(200, 31)
         BtnRegMaintenance.TabIndex = 28
-        BtnRegMaintenance.Text = "Registrar mantenimientos"
+        BtnRegMaintenance.Text = "Registrar mantenimiento"
         BtnRegMaintenance.UseVisualStyleBackColor = True
         ' 
         ' DgvInfMaintenance
@@ -84,14 +86,14 @@ Partial Class MaintenanceForm
         DgvInfMaintenance.Size = New Size(554, 437)
         DgvInfMaintenance.TabIndex = 22
         ' 
-        ' CbVehPlateMaintenance
+        ' CmbVehPlate
         ' 
-        CbVehPlateMaintenance.Font = New Font("Segoe UI", 12F)
-        CbVehPlateMaintenance.FormattingEnabled = True
-        CbVehPlateMaintenance.Location = New Point(12, 33)
-        CbVehPlateMaintenance.Name = "CbVehPlateMaintenance"
-        CbVehPlateMaintenance.Size = New Size(200, 29)
-        CbVehPlateMaintenance.TabIndex = 33
+        CmbVehPlate.Font = New Font("Segoe UI", 12F)
+        CmbVehPlate.FormattingEnabled = True
+        CmbVehPlate.Location = New Point(12, 33)
+        CmbVehPlate.Name = "CmbVehPlate"
+        CmbVehPlate.Size = New Size(200, 29)
+        CmbVehPlate.TabIndex = 33
         ' 
         ' Label1
         ' 
@@ -102,24 +104,6 @@ Partial Class MaintenanceForm
         Label1.Size = New Size(132, 21)
         Label1.TabIndex = 34
         Label1.Text = "Placa de vehículo:"
-        ' 
-        ' DtpMaintenance
-        ' 
-        DtpMaintenance.Font = New Font("Segoe UI", 12F)
-        DtpMaintenance.Location = New Point(12, 89)
-        DtpMaintenance.Name = "DtpMaintenance"
-        DtpMaintenance.Size = New Size(200, 29)
-        DtpMaintenance.TabIndex = 35
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 12F)
-        Label2.Location = New Point(12, 65)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(188, 21)
-        Label2.TabIndex = 36
-        Label2.Text = "Fecha del mantenimiento:"
         ' 
         ' TxtDescriptionMaintenance
         ' 
@@ -144,34 +128,66 @@ Partial Class MaintenanceForm
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 12F)
-        Label4.Location = New Point(12, 121)
+        Label4.Location = New Point(12, 65)
         Label4.Name = "Label4"
-        Label4.Size = New Size(79, 21)
+        Label4.Size = New Size(156, 21)
         Label4.TabIndex = 39
-        Label4.Text = "Mecánico:"
+        Label4.Text = "Cédula del mecánico:"
         ' 
-        ' CbNameMechanic
+        ' CmbIdentityMechanic
         ' 
-        CbNameMechanic.Font = New Font("Segoe UI", 12F)
-        CbNameMechanic.FormattingEnabled = True
-        CbNameMechanic.Location = New Point(12, 145)
-        CbNameMechanic.Name = "CbNameMechanic"
-        CbNameMechanic.Size = New Size(200, 29)
-        CbNameMechanic.TabIndex = 40
+        CmbIdentityMechanic.Font = New Font("Segoe UI", 12F)
+        CmbIdentityMechanic.FormattingEnabled = True
+        CmbIdentityMechanic.Location = New Point(12, 89)
+        CmbIdentityMechanic.Name = "CmbIdentityMechanic"
+        CmbIdentityMechanic.Size = New Size(200, 29)
+        CmbIdentityMechanic.TabIndex = 40
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 12F)
+        Label2.Location = New Point(12, 121)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(53, 21)
+        Label2.TabIndex = 41
+        Label2.Text = "Costo:"
+        ' 
+        ' NudCost
+        ' 
+        NudCost.DecimalPlaces = 2
+        NudCost.Font = New Font("Segoe UI", 12F)
+        NudCost.Location = New Point(12, 145)
+        NudCost.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
+        NudCost.Name = "NudCost"
+        NudCost.Size = New Size(200, 29)
+        NudCost.TabIndex = 42
+        ' 
+        ' BtnUpdMaintenance
+        ' 
+        BtnUpdMaintenance.AutoSize = True
+        BtnUpdMaintenance.Font = New Font("Segoe UI", 12F)
+        BtnUpdMaintenance.Location = New Point(12, 319)
+        BtnUpdMaintenance.Name = "BtnUpdMaintenance"
+        BtnUpdMaintenance.Size = New Size(200, 31)
+        BtnUpdMaintenance.TabIndex = 43
+        BtnUpdMaintenance.Text = "Actualizar mantenimiento"
+        BtnUpdMaintenance.UseVisualStyleBackColor = True
         ' 
         ' MaintenanceForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(784, 461)
-        Controls.Add(CbNameMechanic)
+        Controls.Add(BtnUpdMaintenance)
+        Controls.Add(NudCost)
+        Controls.Add(Label2)
+        Controls.Add(CmbIdentityMechanic)
         Controls.Add(Label4)
         Controls.Add(Label3)
         Controls.Add(TxtDescriptionMaintenance)
-        Controls.Add(Label2)
-        Controls.Add(DtpMaintenance)
         Controls.Add(Label1)
-        Controls.Add(CbVehPlateMaintenance)
+        Controls.Add(CmbVehPlate)
         Controls.Add(BtnToMainMenu)
         Controls.Add(BtnCleanInputs)
         Controls.Add(BtnRegMaintenance)
@@ -180,6 +196,7 @@ Partial Class MaintenanceForm
         StartPosition = FormStartPosition.CenterScreen
         Text = "MaintenanceForm"
         CType(DgvInfMaintenance, ComponentModel.ISupportInitialize).EndInit()
+        CType(NudCost, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -187,12 +204,13 @@ Partial Class MaintenanceForm
     Friend WithEvents BtnCleanInputs As Button
     Friend WithEvents BtnRegMaintenance As Button
     Friend WithEvents DgvInfMaintenance As DataGridView
-    Friend WithEvents CbVehPlateMaintenance As ComboBox
+    Friend WithEvents CmbVehPlate As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents DtpMaintenance As DateTimePicker
-    Friend WithEvents Label2 As Label
     Friend WithEvents TxtDescriptionMaintenance As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents CbNameMechanic As ComboBox
+    Friend WithEvents CmbIdentityMechanic As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents NudCost As NumericUpDown
+    Friend WithEvents BtnUpdMaintenance As Button
 End Class
